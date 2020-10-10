@@ -1,6 +1,6 @@
 @Library('sharedlibsintelipost')_
 pipeline {
-    agent master
+    agent {label 'master'}
     
     stages {
         stage('Prepare sharedlibsintelipost') {
