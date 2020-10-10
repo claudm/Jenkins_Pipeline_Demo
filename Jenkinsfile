@@ -1,12 +1,19 @@
-
+@Library('sharedlibsintelipost')_
 pipeline {
-    agent any
+    agent master
+    
     stages {
+        stage('Prepare sharedlibsintelipost') {
+            steps {
+                intelipostSetup(this)
+            }
+        } 
         stage ('Compile Stage') {
+            
 
             steps {
-                withMaven(maven : 'M3') {
-                    sh 'mvn clean compile'
+                withMaven(maven : 'M3', mavenSettingsConfig: 'mvn-setting-xml') {
+                    mavenTest()  
                 }
             }
         }
