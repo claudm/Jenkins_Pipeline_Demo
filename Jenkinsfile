@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
     stages {
@@ -9,20 +10,21 @@ pipeline {
                 }
             }
         }
-        stage ('Testing Stage') {
+        // stage ('Testing Stage') {
 
-            steps {
-                withMaven(maven : 'apache-maven-3.6.1') {
-                    sh 'mvn test'
-                }
-            }
-        }
-        stage ('Install Stage') {
-            steps {
-                withMaven(maven : 'apache-maven-3.6.1') {
-                    sh 'mvn install'
-                }
-            }
-        }
+        //     steps {
+        //         withMaven(maven : 'apache-maven-3.6.1') {
+        //             sh 'mvn test'
+        //         }
+        //     }
+        // }
+        // stage ('Install Stage') {
+        //     steps {
+        //         withMaven(maven : 'apache-maven-3.6.1') {
+        //             sh 'mvn install'
+        //         }
+        //     }
+        // }
     }
 }
+
