@@ -12,9 +12,9 @@ pipeline {
             
 
             steps {
-                withMaven(maven : 'M3', mavenSettingsConfig: 'mvn-setting') {
+               
                     mavenTest()  
-                }
+                
             }
         }
         // stage ('Testing Stage') {
